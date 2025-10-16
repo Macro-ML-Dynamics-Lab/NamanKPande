@@ -91,7 +91,7 @@ footer {
 
 .carousel-container {
   position: relative;
-  width: 50%;       /* Reduced width */
+  width: 60%;       /* Reduced width */
   margin: 0 auto;
   overflow: hidden;
 }
@@ -143,6 +143,7 @@ footer {
 .next {
   right: 10px;
 }
+
 
 
 
