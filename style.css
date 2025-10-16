@@ -43,11 +43,11 @@ nav.top-right a:hover {
 }
 
 .profile-pic {
-  width: 32;
-  height: 32;
-  border-radius: 50%;  /* Makes it circular */
+  width: 120px;             /* Adjusted size */
+  height: 120px;
+  border-radius: 50%;       /* Makes it circular */
   object-fit: cover;
-  border: 3px solid #00000000;
+  border: 3px solid #333;   /* Optional border */
   margin-bottom: 15px;
 }
 
@@ -91,7 +91,7 @@ footer {
 
 .carousel-container {
   position: relative;
-  width: 80%;
+  width: 60%;       /* Reduced width */
   margin: 0 auto;
   overflow: hidden;
 }
@@ -109,13 +109,14 @@ footer {
 }
 
 .carousel-item {
-  min-width: 50%; /* 2 images visible */
+  min-width: 50%;   /* 2 images visible */
   box-sizing: border-box;
-  padding: 0 10px;
+  padding: 0 5px;   /* Reduced padding */
 }
 
 .carousel-item img {
   width: 100%;
+  height: 150px;    /* Reduced height */
   border-radius: 8px;
   object-fit: cover;
 }
@@ -142,7 +143,3 @@ footer {
 .next {
   right: 10px;
 }
-
-
-
-
