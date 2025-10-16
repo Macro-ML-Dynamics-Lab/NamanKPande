@@ -43,8 +43,8 @@ nav.top-right a:hover {
 }
 
 .profile-pic {
-  width: 150px;
-  height: 150px;
+  width: 32;
+  height: 32;
   border-radius: 50%;  /* Makes it circular */
   object-fit: cover;
   border: 3px solid #333;
@@ -142,3 +142,4 @@ footer {
 .next {
   right: 10px;
 }
+
