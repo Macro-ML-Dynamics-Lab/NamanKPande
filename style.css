@@ -132,3 +132,11 @@ footer {
   right: 10px;
 }
 
+.profile-pic {
+  width: 150px;       /* Adjust size */
+  height: 150px;
+  border-radius: 50%; /* Makes it circular */
+  object-fit: cover;  /* Ensures the image fills the circle */
+  border: 2px solid #333; /* Optional border */
+}
+
