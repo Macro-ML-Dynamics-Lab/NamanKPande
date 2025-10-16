@@ -47,7 +47,7 @@ nav.top-right a:hover {
   height: 32;
   border-radius: 50%;  /* Makes it circular */
   object-fit: cover;
-  border: 1px solid #333;
+  border: 1px solid #00000000;
   margin-bottom: 15px;
 }
 
@@ -142,5 +142,6 @@ footer {
 .next {
   right: 10px;
 }
+
 
 
