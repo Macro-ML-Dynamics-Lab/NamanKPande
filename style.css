@@ -110,7 +110,7 @@ nav.top-right a:hover::after {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #0a0a0a;
+    border: 1px solid #0a0a0a;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -271,3 +271,4 @@ footer {
 .social-links a:hover {
     color: #0077b5;
 }
+
