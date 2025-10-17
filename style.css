@@ -6,15 +6,16 @@ body {
     padding-top: 55px; 
     padding-bottom: 0;
     background: #FFFFFF;
-    color: #000000; /* White text for readability (retained for the header/intro area) */
+    color: #000000;
 }
 
-/* ---------------- Header ---------------- */
+/* ---------------- Header (MODIFIED) ---------------- */
 header {
-    text-align: center;
-    padding: 50px 20px;
+    text-align: center;/* REMOVED: text-align: center; to prevent centering the flex container */
+    padding: 0; 
     background: #FFFFFF;
     color: #000000;
+    margin: 0 auto; /* Ensure header itself doesn't have weird centering */
 }
 
 /* ---------------- Navigation at Top-Right (Full Width Strip) ---------------- */
@@ -23,7 +24,7 @@ nav.top-right {
     top: 0; 
     left: 0; 
     width: 100%; 
-    background: #000000; /* Dark blue strip color */
+    background: #000000; /* Dark strip color */
     padding: 15px 40px 15px 25px; 
     text-align: right; 
     box-sizing: border-box; 
@@ -66,116 +67,110 @@ nav.top-right a:hover::after {
     transform-origin: bottom left;
 }
 
-/* ---------------- Intro Section ---------------- */
-.banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
+/* ---------------- Intro Section (Side-by-Side Layout Fix) ---------------- */
 
-.profile-pic {
-    width: 120px;
-    height: 300;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid #333;
-    margin-bottom: 15px;
-}
+/* REMOVED: .banner section as it's redundant with .intro */
+
 .intro {
     display: flex;
     flex-direction: row; 
     align-items: center; 
-    /* CHANGED: Justify content to the start (left) */
+    /* Key Fix: Ensures content aligns to the left edge of the available space */
     justify-content: flex-start; 
     gap: 40px; 
-    margin-top: 50px; 
-    /* CHANGED: Add horizontal padding to align with other sections */
-    padding: 20px 15%; 
-    /* CHANGED: Adjust min-height to give it some vertical space */
+    margin-top: 0; /* Let the header's padding handle top spacing */
+    
+    /* MODIFIED: Use padding for side alignment, matching the sections */
+    padding: 50px 15%; 
+    
     min-height: 250px; 
-    background: #ffffff; /* Ensure the intro section background is white */
+    background: #ffffff;
+    
+    /* ADDED: Ensures it takes full width for flex-start to work correctly */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .intro-left {
-    flex-shrink: 0; /* Prevents the image from shrinking */
+    flex-shrink: 0;
 }
 
 .intro-right {
     text-align: left; 
-    flex-grow: 1; /* Allows the text content to take available space */
+    flex-grow: 1; 
 }
 
+/* Profile Pic Styles */
 .profile-pic {
     width: 180px; 
     height: 180px; 
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #0a0a0a; /* CHANGED: Dark border to match the image */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Lighter shadow for white background */
-    margin-bottom: 0; 
+    border: 5px solid #0a0a0a;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
 }
 
-/* Headings and text within intro-right (UPDATED for Image Reference) */
+/* Headings and text within intro-right */
 .intro-right h1 {
-    margin: 0 0 5px 0; /* Adjusted top margin for name */
-    font-size: 2.2rem; 
-    color: #0a0a0a; /* CHANGED: Dark text for the name */
+    margin: 0 0 5px 0;
+    font-size: 2.2rem;
+    color: #0a0a0a;
 }
 
-.intro-right .title { /* NEW STYLE for Ph.D. Mathematics */
+.intro-right .title {
     margin: 0 0 10px 0;
-    font-size: 1.4rem; /* Size for title */
-    color: #333333; /* Darker gray for title */
+    font-size: 1.4rem;
+    color: #333333;
     font-weight: 500;
 }
 
-.intro-right .tagline { /* NEW STYLE for tagline */
-    font-size: 1.1rem; 
-    margin-top: 0; 
-    color: #555555; /* Medium gray for tagline */
+.intro-right .tagline {
+    font-size: 1.1rem;
+    margin-top: 0;
+    color: #555555;
 }
 
-/* ---------------- Headings and Text ---------------- */
+/* ---------------- General Headings and Text ---------------- */
 h1 {
     margin: 10px 0 5px;
     font-size: 2rem;
 }
 
-/* NOTE: The p tag here is mostly for the intro section, which uses white text */
+/* General P tag rule */
 p {
     margin: 5px 0 20px;
     font-size: 1rem;
-    color: #000000; /* Ensure intro text remains white on the blue header background */
+    color: #000000; 
 }
 
-/* ---------------- Sections (Headings Updated to White) ---------------- */
+/* ---------------- Sections ---------------- */
 section {
     background: #FFFFFF;
-    /* Main color set to dark black for general text */
     color: #0a0a0a; 
     padding: 50px 15%;
     text-align: left;
 }
 
-/* ADDED: Target H2 headings within sections and set them to white */
+/* Headings within sections */
 section h2 {
     color: #000000; 
-    margin-bottom: 30px; /* Add a bit more space below the main heading */
+    margin-bottom: 30px; 
 }
 
-/* Overwrite the general p rule for paragraphs within sections */
+/* Paragraphs within sections (reduced spacing) */
 section p {
     color: #000000; 
     line-height: 1.6;
+    margin: 0 0 10px 0;
 }
 
-/* Ensure project sub-headings are also dark (these are h3) */
+/* Project sub-headings are dark */
 .project h3 {
     color: #000000;
 }
 
-/* Ensure the contact links are readable against the dark text */
+/* Contact links */
 #contact a {
     color: #007acc;
 }
@@ -265,12 +260,10 @@ footer {
 .social-links a {
     font-size: 30px;
     margin: 0 12px;
-    /* Social icons in the contact section are now dark for visibility */
     color: #0a0a0a; 
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #0077b5; /* LinkedIn blue or customize */
+    color: #0077b5; 
 }
-
