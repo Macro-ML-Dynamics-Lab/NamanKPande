@@ -2,31 +2,32 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #4169E1 0%, #27408B 100%);
-    color: #ffffff; /* White text for readability */
+    /* ADDED: Padding to push content down below the fixed navigation bar (approximate nav height is 50px) */
+    padding-top: 55px; 
+    padding-bottom: 0;
+    background: #70c7ff;
+    color: #ffffff; /* White text for readability (retained for the header/intro area) */
 }
 
 /* ---------------- Header ---------------- */
 header {
     text-align: center;
     padding: 50px 20px;
-    background: linear-gradient(135deg, #4169E1 0%, #27408B 100%);
+    background: #70c7ff;
     color: #ffffff;
 }
 
-/* ---------------- Navigation at Top-Right (UPDATED) ---------------- */
+/* ---------------- Navigation at Top-Right (Full Width Strip) ---------------- */
 nav.top-right {
-    position: fixed; /* CHANGED: Use fixed to keep it at the top even when scrolling */
+    position: fixed; /* Full width, sticks to top */
     top: 0; 
-    left: 0; /* ADDED: Pin it to the left edge */
-    width: 100%; /* CHANGED: Make it span the full width of the viewport */
-    background: #1E3A8A; /* The solid dark blue strip color */
-    /* ADDED: Padding to give the strip its height and internal spacing */
+    left: 0; 
+    width: 100%; 
+    background: #1E3A8A; /* Dark blue strip color */
     padding: 15px 40px 15px 25px; 
-    text-align: right; /* ADDED: Pushes the navigation links to the right */
-    box-sizing: border-box; /* ADDED: Ensures the padding is included in the 100% width */
-    z-index: 100; /* ADDED: Ensures it stays above all other content */
+    text-align: right; 
+    box-sizing: border-box; 
+    z-index: 100;
 }
 
 nav.top-right a {
@@ -36,8 +37,6 @@ nav.top-right a {
     color: #ffffff;
     font-weight: 500;
     transition: color 0.3s;
-
-    /* Strip effect */
     position: relative;
     padding-bottom: 5px;
     display: inline-block;
@@ -90,18 +89,42 @@ h1 {
     font-size: 2rem;
 }
 
+/* NOTE: The p tag here is mostly for the intro section, which uses white text */
 p {
     margin: 5px 0 20px;
     font-size: 1rem;
-    color: #555;
+    color: #ffffff; /* Ensure intro text remains white on the blue header background */
 }
 
-/* ---------------- Sections ---------------- */
+/* ---------------- Sections (Headings Updated to White) ---------------- */
 section {
-    background: linear-gradient(135deg, #4169E1 0%, #27408B 100%);
-    color: #ffffff;
+    background: #70c7ff;
+    /* Main color set to dark black for general text */
+    color: #0a0a0a; 
     padding: 50px 15%;
     text-align: left;
+}
+
+/* ADDED: Target H2 headings within sections and set them to white */
+section h2 {
+    color: #ffffff; 
+    margin-bottom: 30px; /* Add a bit more space below the main heading */
+}
+
+/* Overwrite the general p rule for paragraphs within sections */
+section p {
+    color: #0a0a0a; 
+    line-height: 1.6;
+}
+
+/* Ensure project sub-headings are also dark (these are h3) */
+.project h3 {
+    color: #0a0a0a;
+}
+
+/* Ensure the contact links are readable against the dark text */
+#contact a {
+    color: #007acc;
 }
 
 .project {
@@ -121,7 +144,7 @@ footer {
 /* ---------------- Publications Carousel ---------------- */
 #publications {
     padding: 2rem;
-    background: linear-gradient(135deg, #4169E1 0%, #27408B 100%);
+    background: #70c7ff;
 }
 
 .carousel-container {
@@ -189,7 +212,8 @@ footer {
 .social-links a {
     font-size: 30px;
     margin: 0 12px;
-    color: #333;
+    /* Social icons in the contact section are now dark for visibility */
+    color: #0a0a0a; 
     transition: color 0.3s ease;
 }
 
