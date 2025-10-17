@@ -6,7 +6,7 @@ body {
     padding-top: 55px; 
     padding-bottom: 0;
     background: #FFFFFF;
-    color: #ffffff; /* White text for readability (retained for the header/intro area) */
+    color: #000000; /* White text for readability (retained for the header/intro area) */
 }
 
 /* ---------------- Header ---------------- */
@@ -14,7 +14,7 @@ header {
     text-align: center;
     padding: 50px 20px;
     background: #FFFFFF;
-    color: #ffffff;
+    color: #000000;
 }
 
 /* ---------------- Navigation at Top-Right (Full Width Strip) ---------------- */
@@ -93,7 +93,7 @@ h1 {
 p {
     margin: 5px 0 20px;
     font-size: 1rem;
-    color: #ffffff; /* Ensure intro text remains white on the blue header background */
+    color: #000000; /* Ensure intro text remains white on the blue header background */
 }
 
 /* ---------------- Sections (Headings Updated to White) ---------------- */
@@ -107,19 +107,19 @@ section {
 
 /* ADDED: Target H2 headings within sections and set them to white */
 section h2 {
-    color: #ffffff; 
+    color: #000000; 
     margin-bottom: 30px; /* Add a bit more space below the main heading */
 }
 
 /* Overwrite the general p rule for paragraphs within sections */
 section p {
-    color: #0a0a0a; 
+    color: #000000; 
     line-height: 1.6;
 }
 
 /* Ensure project sub-headings are also dark (these are h3) */
 .project h3 {
-    color: #0a0a0a;
+    color: #000000;
 }
 
 /* Ensure the contact links are readable against the dark text */
@@ -220,5 +220,4 @@ footer {
 .social-links a:hover {
     color: #0077b5; /* LinkedIn blue or customize */
 }
-
 
