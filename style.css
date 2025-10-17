@@ -143,6 +143,21 @@ footer {
 .next {
   right: 10px;
 }
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  font-size: 30px;
+  margin: 0 12px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0077b5; /* You can change this hover color */
+}
+
 
 
 
