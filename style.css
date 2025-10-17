@@ -89,13 +89,13 @@ nav.top-right a:hover::after {
     align-items: center;
     justify-content: flex-start;
     gap: 40px;
-    padding: 50px 15%;
+    padding: 60px 15%;
     background: #ffffff;
     width: 100%;
     box-sizing: border-box;
 }
 
-.intro-left {
+.intro-left 
     flex-shrink: 0;
 }
 
@@ -271,4 +271,5 @@ footer {
 .social-links a:hover {
     color: #0077b5;
 }
+
 
