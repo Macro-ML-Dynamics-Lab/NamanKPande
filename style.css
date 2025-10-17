@@ -75,8 +75,8 @@ nav.top-right a:hover::after {
 }
 
 .profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #333;
@@ -220,4 +220,5 @@ footer {
 .social-links a:hover {
     color: #0077b5; /* LinkedIn blue or customize */
 }
+
 
