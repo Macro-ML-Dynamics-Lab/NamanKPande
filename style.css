@@ -1,299 +1,304 @@
 /* ---------------- General Styles ---------------- */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding-top: 55px; /* Keeps content below fixed nav */
-    background: #FFFFFF;
-    color: #000000;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding-top: 55px; /* Keeps content below fixed nav */
+  background: #ffffff;
+  color: #000000;
 }
 
 /* ---------------- Header ---------------- */
 header {
-    padding: 0;
-    background: #FFFFFF;
-    color: #000000;
-    margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  color: #000000;
+  margin: 0 auto;
 }
 
 /* ---------------- Banner ---------------- */
 .banner {
-    background: #007acc; /* Royal blue banner */
-    height: 200px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000000; /* Black text */
-    padding: 0;
-    margin: 0;
+  background: #007acc; /* Royal blue banner */
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000; /* Black text */
+  padding: 0;
+  margin: 0;
 }
 
 .banner h1 {
-    font-size: 3.5rem;
-    margin: 0;
-    font-weight: 500;
-    color: inherit;
+  font-size: 3.5rem;
+  margin: 0;
+  font-weight: 500;
+  color: inherit;
 }
 
 /* ---------------- Navigation ---------------- */
 nav.top-right {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #000000;
-    padding: 15px 40px 15px 25px;
-    text-align: right;
-    box-sizing: border-box;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  padding: 15px 40px 15px 25px;
+  text-align: right;
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
 nav.top-right a {
-    margin-left: 25px;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
-    padding-bottom: 5px;
-    display: inline-block;
+  margin-left: 25px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+  padding-bottom: 5px;
+  display: inline-block;
 }
 
 nav.top-right a:hover {
-    color: #007acc;
+  color: #007acc;
 }
 
-/* Navigation hover underline animation */
+/* Hover underline animation */
 nav.top-right a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #007acc;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007acc;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
 }
 
 nav.top-right a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* ---------------- Intro Section ---------------- */
 .intro {
-    text-align: left;
-    display: flex;
-    flex-direction: row; 
-    align-items: center; 
-    
-    /* CRUCIAL: Centers the profile block horizontally */
-    justify-content: center; 
-    
-    gap: 40px; 
-    margin-top: 0; 
-    
-    /* REMOVED SIDE PADDING: The block will now be centered using margins */
-    padding: 50px 0; 
-    
-    /* ADDED: Set a fixed width for the content area */
-    max-width: 800px;
-    /* CENTERING BLOCK: Distributes space equally on left and right */
-    margin: 0 auto; 
-    
-    min-height: 300px; 
-    background: #ffffff;
-    
-    /* Ensure sizing is manageable */
-    width: 90%; 
-    box-sizing: border-box;
-}
-
-/* ---------------- Intro-Right Text Alignment ---------------- */
-.intro-right {
-    text-align: left; 
-    
-    /* REMOVED: Remove flex-grow to prevent the block from stretching and forcing itself to the left */
-    /* flex-grow: 1; */ 
-    
-    margin-top: 10px; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 50px 50px;
+  background: #025bb5; /* Blue background */
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0px;
 }
 
 .intro-left {
-    flex-shrink: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.intro-right {
+  text-align: left;
+  flex-grow: 0;
 }
 
 /* Profile Picture */
 .profile-pic {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid #0a0a0a;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #0a0a0a;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Intro Text Styles */
 .intro-right h1 {
-    margin: 0 0 5px 0;
-    font-size: 2.2rem;
-    color: #0a0a0a;
+  margin: 0 0 5px 0;
+  font-size: 2.2rem;
+  color: #ffffff;
 }
 
 .intro-right .title {
-    margin: 0 0 10px 0;
-    font-size: 1.4rem;
-    color: #333333;
-    font-weight: 500;
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 .intro-right .tagline {
-    font-size: 1.1rem;
-    margin-top: 0;
-    color: #555555;
+  font-size: 1.1rem;
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.intro-right p {
+  color: #ffffff;
+  margin: 10px 0 10px 10px;
 }
 
 /* ---------------- General Text ---------------- */
 h1 {
-    margin: 10px 0 5px;
-    font-size: 2rem;
+  margin: 10px 0 5px;
+  font-size: 2rem;
 }
 
 p {
-    margin: 5px 0 20px;
-    font-size: 1rem;
-    color: #000000;
+  margin: 5px 0 20px;
+  font-size: 1rem;
+  color: #000000;
 }
 
 /* ---------------- Sections ---------------- */
 section {
-    background: #FFFFFF;
-    color: #0a0a0a;
-    padding: 50px 15%;
-    text-align: left;
+  background: #025bb5;
+  color: #ffffff;
+  padding: 50px 15%;
+  text-align: left;
 }
 
 section h2 {
-    color: #000000;
-    margin-bottom: 30px;
+  color: #ffffff;
+  margin-bottom: 30px;
 }
 
 section p {
-    color: #000000;
-    line-height: 1.6;
-    margin: 0 0 10px 0;
-}
-
-.project h3 {
-    color: #000000;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0 0 10px 0;
 }
 
 .project {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.project h3 {
+  color: #ffffff;
 }
 
 /* ---------------- Contact ---------------- */
 #contact a {
-    color: #007acc;
-    text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
 #contact a:hover {
-    text-decoration: underline;
-}
-
-/* ---------------- Footer ---------------- */
-footer {
-    margin-top: 40px;
-    padding: 20px;
-    background: #f4f4f4;
-    color: #666;
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-/* ---------------- Publications Carousel ---------------- */
-#publications {
-    padding: 2rem;
-    background: #FFFFFF;
-}
-
-.carousel-container {
-    position: relative;
-    width: 60%;
-    margin: 0 auto;
-    overflow: hidden;
-    background-color: transparent;
-}
-
-.carousel-track-container {
-    overflow: hidden;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.carousel-item {
-    min-width: 50%;
-    box-sizing: border-box;
-    padding: 0 5px;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 150px;
-    border-radius: 8px;
-    object-fit: cover;
-    display: block;
-}
-
-/* Carousel Navigation Buttons */
-.nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    border: none;
-    color: white;
-    font-size: 2rem;
-    padding: 0.3rem 0.8rem;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 10;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
+  color: #007acc;
+  text-decoration: underline;
+  text-decoration-color: #007acc;
 }
 
 /* ---------------- Social Links ---------------- */
 .social-links {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .social-links a {
-    font-size: 30px;
-    margin: 0 12px;
-    color: #0a0a0a;
-    transition: color 0.3s ease;
+  font-size: 30px;
+  margin: 0 12px;
+  color: #ffffff;
+  transition: all 0.3s ease;
 }
 
-.social-links a:hover {
-    color: #0077b5;
+/* Hover effects per platform */
+.social-links a[href*="github"]:hover {
+  color: #333;
+  text-shadow: 0 0 10px #333;
+  transform: scale(1.2);
 }
 
+.social-links a[href*="researchgate"]:hover {
+  color: #00ccbb;
+  text-shadow: 0 0 10px #00ccbb;
+  transform: scale(1.2);
+}
 
+.social-links a[href*="scholar"]:hover {
+  color: #4285F4;
+  text-shadow: 0 0 10px #4285F4;
+  transform: scale(1.2);
+}
 
+.social-links a[href*="linkedin"]:hover {
+  color: #0077b5;
+  text-shadow: 0 0 10px #0077b5;
+  transform: scale(1.2);
+}
 
+/* ---------------- Footer ---------------- */
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #666666;
+  font-size: 0.9rem;
+  text-align: center;
+}
 
+/* ---------------- Publications Carousel ---------------- */
+#publications {
+  padding: 2rem;
+  background: #ffffff;
+}
+
+.carousel-container {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-item {
+  min-width: 50%;
+  box-sizing: border-box;
+  padding: 0 5px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Carousel Navigation Buttons */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
