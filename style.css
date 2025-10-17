@@ -3,8 +3,8 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: #4169E1;
-  color: #4169E1;
+  background: linear-gradient(135deg, #4169E1 0%, #27408B 100%);
+  color: #ffffff; /* White text for readability */
 }
 
 /* Header */
@@ -157,6 +157,7 @@ footer {
 .social-links a:hover {
   color: #0077b5; /* You can change this hover color */
 }
+
 
 
 
