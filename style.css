@@ -5,7 +5,7 @@ body {
     /* ADDED: Padding to push content down below the fixed navigation bar (approximate nav height is 50px) */
     padding-top: 55px; 
     padding-bottom: 0;
-    background: #70c7ff;
+    background: #FFFFFF;
     color: #ffffff; /* White text for readability (retained for the header/intro area) */
 }
 
@@ -13,7 +13,7 @@ body {
 header {
     text-align: center;
     padding: 50px 20px;
-    background: #70c7ff;
+    background: #FFFFFF;
     color: #ffffff;
 }
 
@@ -98,7 +98,7 @@ p {
 
 /* ---------------- Sections (Headings Updated to White) ---------------- */
 section {
-    background: #70c7ff;
+    background: #FFFFFF;
     /* Main color set to dark black for general text */
     color: #0a0a0a; 
     padding: 50px 15%;
@@ -144,7 +144,7 @@ footer {
 /* ---------------- Publications Carousel ---------------- */
 #publications {
     padding: 2rem;
-    background: #70c7ff;
+    background: #FFFFFF;
 }
 
 .carousel-container {
@@ -220,3 +220,4 @@ footer {
 .social-links a:hover {
     color: #0077b5; /* LinkedIn blue or customize */
 }
+
