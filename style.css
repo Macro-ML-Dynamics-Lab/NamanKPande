@@ -95,7 +95,7 @@ nav.top-right a:hover::after {
     box-sizing: border-box;
 }
 
-.intro-left 
+.intro-left {
     flex-shrink: 0;
 }
 
@@ -271,6 +271,7 @@ footer {
 .social-links a:hover {
     color: #0077b5;
 }
+
 
 
 
