@@ -84,24 +84,45 @@ nav.top-right a:hover::after {
 
 /* ---------------- Intro Section ---------------- */
 .intro {
+    text-align: left;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 40px;
-    padding: 60px 15%;
+    flex-direction: row; 
+    align-items: center; 
+    
+    /* CRUCIAL: Centers the profile block horizontally */
+    justify-content: center; 
+    
+    gap: 40px; 
+    margin-top: 0; 
+    
+    /* REMOVED SIDE PADDING: The block will now be centered using margins */
+    padding: 50px 0; 
+    
+    /* ADDED: Set a fixed width for the content area */
+    max-width: 800px;
+    /* CENTERING BLOCK: Distributes space equally on left and right */
+    margin: 0 auto; 
+    
+    min-height: 300px; 
     background: #ffffff;
-    width: 100%;
+    
+    /* Ensure sizing is manageable */
+    width: 90%; 
     box-sizing: border-box;
+}
+
+/* ---------------- Intro-Right Text Alignment ---------------- */
+.intro-right {
+    text-align: left; 
+    
+    /* REMOVED: Remove flex-grow to prevent the block from stretching and forcing itself to the left */
+    /* flex-grow: 1; */ 
+    
+    margin-top: 10px; 
 }
 
 .intro-left {
     flex-shrink: 0;
-}
-
-.intro-right {
-    text-align: left;
-    flex-grow: 1;
 }
 
 /* Profile Picture */
@@ -271,6 +292,7 @@ footer {
 .social-links a:hover {
     color: #0077b5;
 }
+
 
 
 
