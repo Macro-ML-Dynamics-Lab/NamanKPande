@@ -1,271 +1,290 @@
-/* ---------------- General Styles ---------------- */
+/* =======================================================
+   General Styles
+======================================================= */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    /* ADDED: Padding to push content down below the fixed navigation bar (approximate nav height is 50px) */
-    padding-top: 55px; 
-    padding-bottom: 0;
-    background: #FFFFFF;
-    color: #000000;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding-top: 50px; /* Matches black nav height */
+  padding-bottom: 0;
+  background: #ffffff;
+  color: #000000;
 }
 
-/* ---------------- Header (MODIFIED) ---------------- */
+/* =======================================================
+   Header
+======================================================= */
 header {
-    text-align: center;/* REMOVED: text-align: center; to prevent centering the flex container */
-    padding: 0; 
-    background: #FFFFFF;
-    color: #000000;
-    margin: 0 auto; /* Ensure header itself doesn't have weird centering */
+  padding: 0;
+  background: #ffffff;
+  color: #000000;
+  margin: 0 auto;
 }
 
-/* ---------------- Navigation at Top-Right (Full Width Strip) ---------------- */
+/* =======================================================
+   Navigation (Top Right)
+======================================================= */
 nav.top-right {
-    position: fixed; /* Full width, sticks to top */
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    background: #000000; /* Dark strip color */
-    padding: 15px 40px 15px 25px; 
-    text-align: right; 
-    box-sizing: border-box; 
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  padding: 15px 40px 15px 25px;
+  text-align: right;
+  box-sizing: border-box;
+  z-index: 100;
 }
 
 nav.top-right a {
-    margin-left: 25px;
-    text-decoration: none;
-    background-color: transparent; 
-    color: #ffffff;
-    font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
-    padding-bottom: 5px;
-    display: inline-block;
+  margin-left: 25px;
+  text-decoration: none;
+  background: transparent;
+  color: #ffffff;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
 }
 
 nav.top-right a:hover {
-    color: #007acc;
-    background: transparent;
+  color: #007acc;
 }
 
-/* Navigation Strip */
+/* Navigation Underline Animation */
 nav.top-right a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #007acc;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007acc;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
 }
 
 nav.top-right a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
-/* ---------------- Intro Section (Side-by-Side Layout Fix) ---------------- */
+/* =======================================================
+   Banner Strip
+======================================================= */
+.banner-strip {
+  background: #007acc;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+}
 
-/* REMOVED: .banner section as it's redundant with .intro */
+.banner-strip h2 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 500;
+}
 
+/* =======================================================
+   Intro Section (Side-by-Side Layout)
+======================================================= */
 .intro {
-    text-align: center;
-    display: flex;
-    flex-direction: row; 
-    align-items: center; 
-    /* Key Fix: Ensures content aligns to the left edge of the available space */
-    justify-content: flex-start; 
-    gap: 40px; 
-    margin-top: 0; /* Let the header's padding handle top spacing */
-    
-    /* MODIFIED: Use padding for side alignment, matching the sections */
-    padding: 50px 15%; 
-    
-    min-height: 250px; 
-    background: #ffffff;
-    
-    /* ADDED: Ensures it takes full width for flex-start to work correctly */
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  margin-top: 0;
+  padding: 50px 15%;
+  min-height: 250px;
+  background: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .intro-left {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 .intro-right {
-    text-align: left; 
-    flex-grow: 1; 
+  text-align: left;
+  flex-grow: 1;
 }
 
-/* Profile Pic Styles */
+/* Profile Picture */
 .profile-pic {
-    width: 180px; 
-    height: 180px; 
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #0a0a0a;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #0a0a0a;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Headings and text within intro-right */
+/* Intro Text */
 .intro-right h1 {
-    margin: 0 0 5px 0;
-    font-size: 2.2rem;
-    color: #0a0a0a;
+  margin: 0 0 5px 0;
+  font-size: 2.2rem;
+  color: #0a0a0a;
 }
 
 .intro-right .title {
-    margin: 0 0 10px 0;
-    font-size: 1.4rem;
-    color: #333333;
-    font-weight: 500;
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  color: #333333;
+  font-weight: 500;
 }
 
 .intro-right .tagline {
-    font-size: 1.1rem;
-    margin-top: 0;
-    color: #555555;
+  font-size: 1.1rem;
+  margin-top: 0;
+  color: #555555;
 }
 
-/* ---------------- General Headings and Text ---------------- */
+/* =======================================================
+   General Headings and Paragraphs
+======================================================= */
 h1 {
-    margin: 10px 0 5px;
-    font-size: 2rem;
+  margin: 10px 0 5px;
+  font-size: 2rem;
 }
 
-/* General P tag rule */
 p {
-    margin: 5px 0 20px;
-    font-size: 1rem;
-    color: #000000; 
+  margin: 5px 0 20px;
+  font-size: 1rem;
+  color: #000000;
 }
 
-/* ---------------- Sections ---------------- */
+/* =======================================================
+   Sections
+======================================================= */
 section {
-    background: #FFFFFF;
-    color: #0a0a0a; 
-    padding: 50px 15%;
-    text-align: left;
+  background: #ffffff;
+  color: #0a0a0a;
+  padding: 50px 15%;
+  text-align: left;
 }
 
-/* Headings within sections */
 section h2 {
-    color: #000000; 
-    margin-bottom: 30px; 
+  color: #000000;
+  margin-bottom: 30px;
 }
 
-/* Paragraphs within sections (reduced spacing) */
 section p {
-    color: #000000; 
-    line-height: 1.6;
-    margin: 0 0 10px 0;
+  color: #000000;
+  line-height: 1.6;
+  margin: 0 0 10px 0;
 }
 
-/* Project sub-headings are dark */
-.project h3 {
-    color: #000000;
-}
-
-/* Contact links */
-#contact a {
-    color: #007acc;
-}
-
+/* Projects */
 .project {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-/* ---------------- Footer ---------------- */
+.project h3 {
+  color: #000000;
+}
+
+/* Contact Links */
+#contact a {
+  color: #007acc;
+}
+
+/* =======================================================
+   Footer
+======================================================= */
 footer {
-    margin-top: 40px;
-    padding: 20px;
-    background: #f4f4f4;
-    color: #666;
-    font-size: 0.9rem;
-    text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #666666;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
-/* ---------------- Publications Carousel ---------------- */
+/* =======================================================
+   Publications Carousel
+======================================================= */
 #publications {
-    padding: 2rem;
-    background: #FFFFFF;
+  padding: 2rem;
+  background: #ffffff;
 }
 
 .carousel-container {
-    position: relative;
-    width: 60%;
-    margin: 0 auto;
-    overflow: hidden;
-    background-color: transparent;
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: transparent;
 }
 
 .carousel-track-container {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .carousel-item {
-    min-width: 50%;
-    box-sizing: border-box;
-    padding: 0 5px;
+  min-width: 50%;
+  box-sizing: border-box;
+  padding: 0 5px;
 }
 
 .carousel-item img {
-    width: 100%;
-    height: 150px;
-    border-radius: 8px;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
 }
 
 /* Carousel Navigation Buttons */
 .nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    border: none;
-    color: white;
-    font-size: 2rem;
-    padding: 0.3rem 0.8rem;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
 }
 
 .prev {
-    left: 10px;
+  left: 10px;
 }
 
 .next {
-    right: 10px;
+  right: 10px;
 }
 
-/* ---------------- Social Links ---------------- */
+/* =======================================================
+   Social Links
+======================================================= */
 .social-links {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .social-links a {
-    font-size: 30px;
-    margin: 0 12px;
-    color: #0a0a0a; 
-    transition: color 0.3s ease;
+  font-size: 30px;
+  margin: 0 12px;
+  color: #0a0a0a;
+  transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #0077b5; 
+  color: #0077b5;
 }
-
