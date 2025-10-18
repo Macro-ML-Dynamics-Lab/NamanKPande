@@ -189,7 +189,7 @@ section p {
 
 #contact a:hover {
   color: #007acc;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
   text-decoration-color: #007acc;
 }
 
@@ -243,7 +243,7 @@ footer {
 /* ---------------- Publications Carousel ---------------- */
 #publications {
   padding: 2rem;
-  background: #ffffff;
+  background: #025bb5;
 }
 
 .carousel-container {
@@ -256,6 +256,7 @@ footer {
 
 .carousel-track-container {
   overflow: hidden;
+  
 }
 
 .carousel-track {
