@@ -1,40 +1,40 @@
 /* ---------------- General Styles ---------------- */
 body {
-  font-family: Georgia, serif;
+  font-family: 'Georgia', serif;
   margin: 0;
   padding-top: 55px; /* Keeps content below fixed nav */
   background: #ffffff;
   color: #000000;
+  scroll-behavior: smooth;
 }
 
 /* ---------------- Header ---------------- */
 header {
-  padding: 0;
   background: #ffffff;
   color: #000000;
   margin: 0 auto;
+  padding: 0;
 }
 
 /* ---------------- Banner ---------------- */
 .banner {
-  background: #025bb5; /* Royal blue banner */
+  background: linear-gradient(135deg, #025bb5, #007acc);
   height: 300px;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #ffffff; /* Black text */
-  padding: 0;
-  margin: 0;
-  flex-direction: column;
+  color: #ffffff;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .banner h1 {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   margin: 0;
-  font-weight: 500;
-  color: inherit;
-
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 /* ---------------- Navigation ---------------- */
@@ -44,7 +44,7 @@ nav.top-right {
   left: 0;
   width: 100%;
   background: #000000;
-  padding: 15px 40px 15px 25px;
+  padding: 15px 40px;
   text-align: right;
   box-sizing: border-box;
   z-index: 1000;
@@ -55,17 +55,17 @@ nav.top-right a {
   text-decoration: none;
   color: #ffffff;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
   position: relative;
   padding-bottom: 5px;
   display: inline-block;
 }
 
 nav.top-right a:hover {
-  color: #007acc;
+  color: #24bbf2;
+  transform: scale(1.05);
 }
 
-/* Hover underline animation */
 nav.top-right a::after {
   content: '';
   position: absolute;
@@ -73,7 +73,7 @@ nav.top-right a::after {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #007acc;
+  background-color: #24bbf2;
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
@@ -91,11 +91,10 @@ nav.top-right a:hover::after {
   align-items: center;
   justify-content: center;
   gap: 50px;
-  padding: 50px 20px;
+  padding: 60px 10%;
   background: #ffffff;
-  width: 100%;
+  flex-wrap: wrap;
   box-sizing: border-box;
-  margin: 0px;
 }
 
 .intro-left {
@@ -106,6 +105,7 @@ nav.top-right a:hover::after {
 .intro-right {
   text-align: left;
   flex-grow: 0;
+  max-width: 600px;
 }
 
 /* Profile Picture */
@@ -114,39 +114,36 @@ nav.top-right a:hover::after {
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid #0a0a0a;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #0a0a0a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Intro Text Styles */
-.intro-right h1 {
-  margin: 0 0 5px 0;
-  font-size: 2.2rem;
-  color: #ffffff;
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-.intro-right .title {
-  margin: 0 0 10px 0;
-  font-size: 1.4rem;
-  color: #ffffff;
-  font-weight: 500;
-}
-
-.intro-right .tagline {
-  font-size: 1.1rem;
-  margin-top: 0;
-  color: #ffffff;
-}
-
+/* Intro Text */
 .intro-right p {
   color: #000000;
-  margin: 10px 0 10px 10px;
+  margin: 8px 0 10px 0;
+  line-height: 1.6;
 }
 
 /* ---------------- General Text ---------------- */
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+}
+
 h1 {
   margin: 10px 0 5px;
   font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #025bb5;
 }
 
 p {
@@ -159,40 +156,29 @@ p {
 section {
   background: #ffffff;
   color: #000000;
-  padding: 50px 15%;
+  padding: 60px 15%;
   text-align: left;
+  line-height: 1.6;
 }
 
 section h2 {
-  color: #000000;
   margin-bottom: 30px;
 }
 
-section p {
-  color: #000000;
-  line-height: 1.6;
-  margin: 0 0 10px 0;
-}
-
 .project {
-  margin-bottom: 20px;
-}
-
-.project h3 {
-  color: #000000;
+  margin-bottom: 25px;
 }
 
 /* ---------------- Contact ---------------- */
 #contact a {
   color: #000000;
   text-decoration: none;
-  transition: color 0.3s, text-shadow 0.3s;
+  transition: all 0.3s ease;
 }
 
 #contact a:hover {
   color: #007acc;
-  /*text-decoration: underline;*/
-  text-decoration-color: #007acc;
+  text-shadow: 0 0 6px #007acc;
 }
 
 /* ---------------- Social Links ---------------- */
@@ -203,7 +189,7 @@ section p {
 .social-links a {
   font-size: 30px;
   margin: 0 12px;
-  color: #ffffff;
+  color: #000000;
   transition: all 0.3s ease;
 }
 
@@ -235,11 +221,12 @@ section p {
 /* ---------------- Footer ---------------- */
 footer {
   margin-top: 40px;
-  padding: 20px;
-  background: #f4f4f4;
-  color: #666666;
-  font-size: 0.9rem;
+  padding: 25px;
+  background: #025bb5;
+  color: #ffffff;
+  font-size: 0.95rem;
   text-align: center;
+  letter-spacing: 0.5px;
 }
 
 /* ---------------- Publications Carousel ---------------- */
@@ -254,11 +241,6 @@ footer {
   margin: 0 auto;
   overflow: hidden;
   background-color: transparent;
-}
-
-.carousel-track-container {
-  overflow: hidden;
-  
 }
 
 .carousel-track {
@@ -281,6 +263,12 @@ footer {
   border-radius: 8px;
   object-fit: cover;
   display: block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.carousel-item img:hover {
+  transform: scale(1.03);
 }
 
 /* Carousel Navigation Buttons */
@@ -296,6 +284,11 @@ footer {
   cursor: pointer;
   border-radius: 50%;
   z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.nav:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .prev {
@@ -304,5 +297,89 @@ footer {
 
 .next {
   right: 10px;
+}
 
+/* ---------------- Responsive Design ---------------- */
+@media (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .intro-right {
+    text-align: center;
+  }
+
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+  }
+
+  .banner h1 {
+    font-size: 2.4rem;
+  }
+
+  section {
+    padding: 40px 8%;
+  }
+}
+
+/* ---------------- Education Section ---------------- */
+.education-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.education-section h2 {
+  color: #000000;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  /*border-bottom: 3px solid #007acc;*/
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+/* Individual Course Cards */
+.education-item {
+  background: #f8fbff;
+  border-left: 6px solid #025bb5;
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.education-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  background: #4c6ef4;
+}
+
+.education-item h3 {
+  color: #000000;
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.education-item h4 {
+  color: #000000;
+  font-weight: 600;
+  margin: 6px 0 10px 0;
+  font-size: 1rem;
+}
+
+.education-item p {
+  color: #333333;
+  line-height: 1.6;
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+.education-item em {
+  color: #444444;
 }
