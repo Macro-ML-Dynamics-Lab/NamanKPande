@@ -1,308 +1,351 @@
 /* ---------------- General Styles ---------------- */
 body {
-  font-family: Georgia, serif;
-  margin: 0;
-  padding-top: 55px; /* Keeps content below fixed nav */
-  background: #ffffff;
-  color: #000000;
+    font-family: Georgia, serif;
+    margin: 0;
+    padding-top: 55px; /* Keeps content below fixed nav */
+    background: #ffffff;
+    color: #000000;
 }
 
 /* ---------------- Header ---------------- */
 header {
-  padding: 0;
-  background: #ffffff;
-  color: #000000;
-  margin: 0 auto;
+    padding: 0;
+    background: #ffffff;
+    color: #000000;
+    margin: 0 auto;
 }
 
 /* ---------------- Banner ---------------- */
 .banner {
-  background: #025bb5; /* Royal blue banner */
-  height: 300px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff; /* Black text */
-  padding: 0;
-  margin: 0;
-  flex-direction: column;
+    background: #025bb5; /* Royal blue banner */
+    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
 }
 
 .banner h1 {
-  font-size: 3.5rem;
-  margin: 0;
-  font-weight: 500;
-  color: inherit;
-
+    font-size: 3.5rem;
+    margin: 0;
+    font-weight: 500;
+    color: inherit;
 }
 
 /* ---------------- Navigation ---------------- */
 nav.top-right {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #000000;
-  padding: 15px 40px 15px 25px;
-  text-align: right;
-  box-sizing: border-box;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000000;
+    padding: 15px 40px 15px 25px;
+    text-align: right;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
 nav.top-right a {
-  margin-left: 25px;
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 500;
-  transition: color 0.3s;
-  position: relative;
-  padding-bottom: 5px;
-  display: inline-block;
+    margin-left: 25px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
 }
 
 nav.top-right a:hover {
-  color: #007acc;
+    color: #007acc;
 }
 
 /* Hover underline animation */
 nav.top-right a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #007acc;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007acc;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
 }
 
 nav.top-right a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
-/* ---------------- Intro Section ---------------- */
+/* ---------------- Intro Section MODIFIED ---------------- */
 .intro {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  padding: 50px 20px;
-  background: #ffffff;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0px;
+    /* Kept alignment and spacing for centering the whole unit */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* This centers the combined content (image + card) */
+    gap: 50px;
+    padding: 50px 20px;
+    background: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
 }
 
 .intro-left {
-  flex-shrink: 0;
-  flex-grow: 0;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 
 .intro-right {
-  text-align: left;
-  flex-grow: 0;
+    /* MODIFIED: Changed background and color for a white card look as per the image */
+    background-color: #ffffff; 
+    color: #000000; /* Text color changed to black */
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Lighter shadow for a card effect */
+    max-width: 500px;
+    margin: 0; /* Removed auto margin that might interfere with flex centering */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0; /* Subtle border for better definition */
+}
+
+.intro-right:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15); /* Slightly darker shadow on hover */
+    /* REMOVED: background-color: #4c6ef4; - Removed color change on hover to keep the white card look */
+    background-color: #4c6ef4; /* Explicitly keep background white on hover */
+}
+
+.intro-right p {
+    margin: 8px 0;
+    line-height: 1.5;
+    color: #000000; /* Ensure text is black */
+}
+
+.intro-right b {
+    font-weight: 600;
+    color: #000000; /* Ensure bold text is black */
 }
 
 /* Profile Picture */
 .profile-pic {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid #0a0a0a;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #0a0a0a;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Intro Text Styles */
-.intro-right h1 {
-  margin: 0 0 5px 0;
-  font-size: 2.2rem;
-  color: #ffffff;
-}
-
-.intro-right .title {
-  margin: 0 0 10px 0;
-  font-size: 1.4rem;
-  color: #ffffff;
-  font-weight: 500;
-}
-
-.intro-right .tagline {
-  font-size: 1.1rem;
-  margin-top: 0;
-  color: #ffffff;
+/* Intro Text Styles - Cleaned up to reflect the desired output image */
+/* Removed specific intro-right heading/title styles since the content uses <p> */
+.intro-right h1, .intro-right .title, .intro-right .tagline {
+    display: none; /* Hide if they were accidentally being used */
 }
 
 .intro-right p {
-  color: #000000;
-  margin: 10px 0 10px 10px;
+    color: #000000;
+    margin: 8px 0; /* Adjusted margin to be consistent */
+    font-size: 1rem;
+}
+
+/* ---------------- Education Section Enhancements ---------------- */
+.education-block {
+    background: #f8fbff; /* soft white-blue background */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    max-width: 750px;
+    margin: 30px auto;
+    border-left: 5px solid #025bb5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.education-block:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    background: #eaf3ff;
+}
+
+.education-block b {
+    color: #025bb5;
+    font-size: 1.1rem;
+}
+
+/* Divider between education items */
+.education-divider {
+    height: 2px;
+    width: 80%;
+    margin: 25px auto;
+    background: linear-gradient(to right, #025bb5, #5ca9ff);
+    border-radius: 2px;
+    opacity: 0.8;
 }
 
 /* ---------------- General Text ---------------- */
 h1 {
-  margin: 10px 0 5px;
-  font-size: 2rem;
+    margin: 10px 0 5px;
+    font-size: 2rem;
 }
 
 p {
-  margin: 5px 0 20px;
-  font-size: 1rem;
-  color: #000000;
+    margin: 5px 0 20px;
+    font-size: 1rem;
+    color: #000000;
 }
 
 /* ---------------- Sections ---------------- */
 section {
-  background: #ffffff;
-  color: #000000;
-  padding: 50px 15%;
-  text-align: left;
+    background: #ffffff;
+    color: #000000;
+    padding: 50px 15%;
+    text-align: left;
 }
 
 section h2 {
-  color: #000000;
-  margin-bottom: 30px;
+    color: #000000;
+    margin-bottom: 30px;
 }
 
 section p {
-  color: #000000;
-  line-height: 1.6;
-  margin: 0 0 10px 0;
+    color: #000000;
+    line-height: 1.6;
+    margin: 0 0 10px 0;
 }
 
 .project {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .project h3 {
-  color: #000000;
+    color: #000000;
 }
 
 /* ---------------- Contact ---------------- */
 #contact a {
-  color: #000000;
-  text-decoration: none;
-  transition: color 0.3s, text-shadow 0.3s;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 #contact a:hover {
-  color: #007acc;
-  /*text-decoration: underline;*/
-  text-decoration-color: #007acc;
+    color: #007acc;
+    text-decoration-color: #007acc;
 }
 
 /* ---------------- Social Links ---------------- */
 .social-links {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
 .social-links a {
-  font-size: 30px;
-  margin: 0 12px;
-  color: #ffffff;
-  transition: all 0.3s ease;
+    font-size: 30px;
+    margin: 0 12px;
+    color: #025bb5; /* Changed social icon color to a blue for better visibility on white */
+    transition: all 0.3s ease;
 }
 
 /* Hover effects per platform */
 .social-links a[href*="github"]:hover {
-  color: #333;
-  text-shadow: 0 0 10px #333;
-  transform: scale(1.2);
+    color: #333;
+    text-shadow: 0 0 10px #333;
+    transform: scale(1.2);
 }
 
 .social-links a[href*="researchgate"]:hover {
-  color: #00ccbb;
-  text-shadow: 0 0 10px #00ccbb;
-  transform: scale(1.2);
+    color: #00ccbb;
+    text-shadow: 0 0 10px #00ccbb;
+    transform: scale(1.2);
 }
 
 .social-links a[href*="scholar"]:hover {
-  color: #4285F4;
-  text-shadow: 0 0 10px #4285F4;
-  transform: scale(1.2);
+    color: #4285F4;
+    text-shadow: 0 0 10px #4285F4;
+    transform: scale(1.2);
 }
 
 .social-links a[href*="linkedin"]:hover {
-  color: #0077b5;
-  text-shadow: 0 0 10px #0077b5;
-  transform: scale(1.2);
+    color: #0077b5;
+    text-shadow: 0 0 10px #0077b5;
+    transform: scale(1.2);
 }
 
 /* ---------------- Footer ---------------- */
 footer {
-  margin-top: 40px;
-  padding: 20px;
-  background: #f4f4f4;
-  color: #666666;
-  font-size: 0.9rem;
-  text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: #f4f4f4;
+    color: #666666;
+    font-size: 0.9rem;
+    text-align: center;
 }
 
-/* ---------------- Publications Carousel ---------------- */
+/* ---------------- Carousel Styles (No Change Needed for Layout) ---------------- */
 #publications {
-  padding: 2rem;
-  background: #ffffff;
+    padding: 2rem;
+    background: #ffffff;
 }
 
 .carousel-container {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  background-color: transparent;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: transparent;
 }
 
 .carousel-track-container {
-  overflow: hidden;
-  
+    overflow: hidden;
 }
 
 .carousel-track {
-  display: flex;
-  transition: transform 1s ease-in-out;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    display: flex;
+    transition: transform 1s ease-in-out;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .carousel-item {
-  min-width: 50%;
-  box-sizing: border-box;
-  padding: 0 5px;
+    min-width: 50%;
+    box-sizing: border-box;
+    padding: 0 5px;
 }
 
 .carousel-item img {
-  width: 100%;
-  height: 450px;
-  border-radius: 8px;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
 }
 
 /* Carousel Navigation Buttons */
 .nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  font-size: 2rem;
-  padding: 0.3rem 0.8rem;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
 }
 
 .prev {
-  left: 10px;
+    left: 10px;
 }
 
 .next {
-  right: 10px;
-
+    right: 10px;
 }
