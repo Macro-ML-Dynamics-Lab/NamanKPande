@@ -1,11 +1,20 @@
 /* ---------------- General Styles ---------------- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  ✅ Prevents horizontal scroll entirely 
+}
+
 body {
   font-family: 'Georgia', serif;
-  margin: 0;
-  padding-top: 55px; /* Keeps content below fixed nav */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures full viewport height */
   background: #ffffff;
   color: #000000;
   scroll-behavior: smooth;
+  padding-top: 55px; /* Keeps content below fixed nav */
 }
 
 /* ---------------- Header ---------------- */
@@ -14,29 +23,31 @@ header {
   color: #000000;
   margin: 0 auto;
   padding: 0;
+  width: 100%;
 }
 
 /* ---------------- Banner ---------------- */
 .banner {
-  background: linear-gradient(135deg, #025bb5, #007acc);
-  height: 300px;
+  background: #007acc;
   width: 100%;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   text-align: center;
-  padding: 0 20px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents any internal overflow */
 }
 
 .banner h1 {
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   margin: 0;
   font-weight: 600;
-  letter-spacing: 1px;
+  color: #ffffff;
 }
-
 /* ---------------- Navigation ---------------- */
 nav.top-right {
   position: fixed;
@@ -105,7 +116,6 @@ nav.top-right a:hover::after {
 .intro-right {
   text-align: left;
   flex-grow: 0;
-  max-width: 600px;
 }
 
 /* Profile Picture */
@@ -154,6 +164,7 @@ p {
 
 /* ---------------- Sections ---------------- */
 section {
+  flex: 1; /* Expands to push footer down */
   background: #ffffff;
   color: #000000;
   padding: 60px 15%;
@@ -218,116 +229,8 @@ section h2 {
   transform: scale(1.2);
 }
 
-/* ---------------- Footer ---------------- */
-footer {
-  margin-top: 40px;
-  padding: 25px;
-  background: #025bb5;
-  color: #ffffff;
-  font-size: 0.95rem;
-  text-align: center;
-  letter-spacing: 0.5px;
-}
-
-/* ---------------- Publications Carousel ---------------- */
-#publications {
-  padding: 2rem;
-  background: #ffffff;
-}
-
-.carousel-container {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  background-color: transparent;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 1s ease-in-out;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.carousel-item {
-  min-width: 50%;
-  box-sizing: border-box;
-  padding: 0 5px;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 450px;
-  border-radius: 8px;
-  object-fit: cover;
-  display: block;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.carousel-item img:hover {
-  transform: scale(1.03);
-}
-
-/* Carousel Navigation Buttons */
-.nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  font-size: 2rem;
-  padding: 0.3rem 0.8rem;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
-  transition: background-color 0.3s ease;
-}
-
-.nav:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
-/* ---------------- Responsive Design ---------------- */
-@media (max-width: 768px) {
-  .intro {
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .intro-right {
-    text-align: center;
-  }
-
-  .profile-pic {
-    width: 180px;
-    height: 180px;
-  }
-
-  .banner h1 {
-    font-size: 2.4rem;
-  }
-
-  section {
-    padding: 40px 8%;
-  }
-}
-
 /* ---------------- Education Section ---------------- */
 .education-section {
-  max-width: 900px;
   margin: 60px auto;
   padding: 0 20px;
 }
@@ -337,7 +240,6 @@ footer {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 40px;
-  /*border-bottom: 3px solid #007acc;*/
   display: inline-block;
   padding-bottom: 8px;
 }
@@ -356,7 +258,7 @@ footer {
 .education-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  background: #4c6ef4;
+  background: #007acc;
 }
 
 .education-item h3 {
@@ -382,4 +284,32 @@ footer {
 
 .education-item em {
   color: #444444;
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+  background: #f4f4f4;
+  color: #666666;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto; /* Keeps it at the bottom */
+  width: 100%;
+  border-top: 1px solid #e0e0e0; /* Optional subtle separator */
+}
+
+footer p {
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+footer a {
+  color: #666666;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #000000;
 }
