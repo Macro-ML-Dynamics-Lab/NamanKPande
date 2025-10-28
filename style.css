@@ -17,15 +17,15 @@ header {
 
 /* ---------------- Banner ---------------- */
 .banner {
-    background: #007acc; /* Royal blue banner */
+    background: linear-gradient(to right, #007acc, #004c99); /* Royal blue banner */
     height: 300px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    padding: 0;
-    margin: 0;
+    /*padding: 0;*/
+    /*margin: 0;*/
     flex-direction: column;
     position: relative;
 }
@@ -43,9 +43,9 @@ nav.top-right {
     top: 0;
     left: 0;
     width: 100%;
-    background: #000000;
+    background: #ffffff;
     padding: 15px 40px 15px 25px;
-    text-align: right;
+    text-align: center;
     box-sizing: border-box;
     z-index: 1000;
 }
@@ -53,7 +53,7 @@ nav.top-right {
 nav.top-right a {
     margin-left: 25px;
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     font-weight: 500;
     transition: color 0.3s;
     position: relative;
@@ -82,6 +82,10 @@ nav.top-right a::after {
 nav.top-right a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+nav.top-right a.active {
+  color: #007acc;
 }
 
 /* ---------------- Intro Section MODIFIED ---------------- */
@@ -120,7 +124,7 @@ nav.top-right a:hover::after {
 .intro-right:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.15); /* Slightly darker shadow on hover */
-    background-color: #007acc; /* Explicitly keep background white on hover */
+    background-color: #eaf5ff; /* Explicitly keep background white on hover */
 }
 
 .intro-right p {
