@@ -1,315 +1,198 @@
 /* ---------------- General Styles ---------------- */
-html, body {
-  height: 100%;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;  ✅ Prevents horizontal scroll entirely 
 }
 
-body {
-  font-family: 'Georgia', serif;
+html, body {
+  height: 100%;
+  font-family: Georgia, serif;
+  color: #000;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensures full viewport height */
-  background: #ffffff;
-  color: #000000;
-  scroll-behavior: smooth;
-  padding-top: 55px; /* Keeps content below fixed nav */
 }
 
 /* ---------------- Header ---------------- */
 header {
   background: #ffffff;
-  color: #000000;
-  margin: 0 auto;
-  padding: 0;
+  color: #000;
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.top-right {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 15px 40px 15px 25px;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.top-right a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+v.top-right a:hover {
+    color: #007acc;
+}
+
+/* Hover underline animation */
+.top-right a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007acc;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.top-right a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.top-right a.active {
+  color: #007acc;
 }
 
 /* ---------------- Banner ---------------- */
 .banner {
-  background: #007acc;
+  background: linear-gradient(to right, #007acc, #004c99);
+  color: white;
+  height: 300px;
   width: 100%;
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
+  padding: 80px 20px 60px 20px;
   text-align: center;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevents any internal overflow */
+  margin-top: 60px;
 }
 
 .banner h1 {
-  font-size: 3.5rem;
-  margin: 0;
-  font-weight: 600;
-  color: #ffffff;
-}
-/* ---------------- Navigation ---------------- */
-nav.top-right {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #000000;
-  padding: 15px 40px;
-  text-align: right;
-  box-sizing: border-box;
-  z-index: 1000;
-}
-
-nav.top-right a {
-  margin-left: 25px;
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  position: relative;
-  padding-bottom: 5px;
-  display: inline-block;
-}
-
-nav.top-right a:hover {
-  color: #24bbf2;
-  transform: scale(1.05);
-}
-
-nav.top-right a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #24bbf2;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
-}
-
-nav.top-right a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-/* ---------------- Intro Section ---------------- */
-.intro {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  padding: 60px 10%;
-  background: #ffffff;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-}
-
-.intro-left {
-  flex-shrink: 0;
-  flex-grow: 0;
-}
-
-.intro-right {
-  text-align: left;
-  flex-grow: 0;
-}
-
-/* Profile Picture */
-.profile-pic {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #0a0a0a;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profile-pic:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* Intro Text */
-.intro-right p {
-  color: #000000;
-  margin: 8px 0 10px 0;
-  line-height: 1.6;
-}
-
-/* ---------------- General Text ---------------- */
-h1, h2, h3 {
-  font-family: 'Georgia', serif;
-}
-
-h1 {
-  margin: 10px 0 5px;
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.8rem;
-  color: #025bb5;
-}
-
-p {
-  margin: 5px 0 20px;
-  font-size: 1rem;
-  color: #000000;
-}
-
-/* ---------------- Sections ---------------- */
-section {
-  flex: 1; /* Expands to push footer down */
-  background: #ffffff;
-  color: #000000;
-  padding: 60px 15%;
-  text-align: left;
-  line-height: 1.6;
-}
-
-section h2 {
-  margin-bottom: 30px;
-}
-
-.project {
-  margin-bottom: 25px;
-}
-
-/* ---------------- Contact ---------------- */
-#contact a {
-  color: #000000;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-#contact a:hover {
-  color: #007acc;
-  text-shadow: 0 0 6px #007acc;
-}
-
-/* ---------------- Social Links ---------------- */
-.social-links {
-  margin-top: 15px;
-}
-
-.social-links a {
-  font-size: 30px;
-  margin: 0 12px;
-  color: #000000;
-  transition: all 0.3s ease;
-}
-
-/* Hover effects per platform */
-.social-links a[href*="github"]:hover {
-  color: #333;
-  text-shadow: 0 0 10px #333;
-  transform: scale(1.2);
-}
-
-.social-links a[href*="researchgate"]:hover {
-  color: #00ccbb;
-  text-shadow: 0 0 10px #00ccbb;
-  transform: scale(1.2);
-}
-
-.social-links a[href*="scholar"]:hover {
-  color: #4285F4;
-  text-shadow: 0 0 10px #4285F4;
-  transform: scale(1.2);
-}
-
-.social-links a[href*="linkedin"]:hover {
-  color: #0077b5;
-  text-shadow: 0 0 10px #0077b5;
-  transform: scale(1.2);
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 /* ---------------- Education Section ---------------- */
 .education-section {
-  margin: 60px auto;
-  padding: 0 20px;
+  flex: 1;
+  padding: 50px 15%;
+  background: #ffffff;
 }
 
-.education-section h2 {
-  color: #000000;
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 40px;
+.education-section h3 {
+  font-size: 1.6rem;
+  margin: 40px 0 20px 0;
+  color: #000;
+  border-bottom: 2px solid #007acc;
   display: inline-block;
-  padding-bottom: 8px;
+  padding-bottom: 4px;
 }
 
-/* Individual Course Cards */
 .education-item {
-  background: #f8fbff;
-  border-left: 6px solid #025bb5;
-  padding: 25px 30px;
-  margin-bottom: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  background: #f9fcff;
+  padding: 20px;
+  border-left: 4px solid #007acc;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .education-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  background: #007acc;
+  background: #eaf5ff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
-
-.education-item h3 {
-  color: #000000;
-  font-size: 1.3rem;
-  margin-bottom: 6px;
-  font-weight: 600;
 }
 
 .education-item h4 {
-  color: #000000;
-  font-weight: 600;
-  margin: 6px 0 10px 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
 }
 
-.education-item p {
-  color: #333333;
+.education-item h5 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* ---------------- Conference & Workshop List ---------------- */
+.education-section ol {
+  counter-reset: item;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 30px;
+  position: relative;
+  border-left: 2px solid #007acc20; /* subtle timeline line */
+  padding-left: 40px;
+}
+
+.education-section ol li {
+  counter-increment: item;
+  background: #f9fcff;
+  border-left: 4px solid #007acc;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  position: relative;
+  font-size: 1rem;
+  color: #222;
   line-height: 1.6;
-  margin: 6px 0;
-  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
 }
 
-.education-item em {
-  color: #444444;
+.education-section ol li::before {
+  content: counter(item);
+  position: absolute;
+  left: -32px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #007acc;
+  background: #eaf5ff;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.education-section ol li:hover {
+  background: #eaf5ff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 /* ---------------- Footer ---------------- */
 footer {
-  background: #f4f4f4;
-  color: #666666;
-  font-size: 0.9rem;
-  text-align: center;
-  padding: 20px;
-  margin-top: auto; /* Keeps it at the bottom */
-  width: 100%;
-  border-top: 1px solid #e0e0e0; /* Optional subtle separator */
-}
-
-footer p {
-  margin: 0;
-  letter-spacing: 0.5px;
-}
-
-footer a {
-  color: #666666;
-  text-decoration: none;
-  margin: 0 8px;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #000000;
+    margin-top: 40px;
+    padding: 20px;
+    background: #f4f4f4;
+    color: #666666;
+    font-size: 0.9rem;
+    text-align: center;
 }
