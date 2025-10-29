@@ -45,9 +45,35 @@ nav.top-right {
     width: 100%;
     background: #ffffff;
     padding: 15px 40px 15px 25px;
-    text-align: center;
     box-sizing: border-box;
     z-index: 1000;
+    display: flex; /* Use flexbox to align content */
+    justify-content: center; /* Push links to the right */
+    align-items: center;
+}
+
+/* Hide the hamburger button on Desktop */
+.hamburger {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px; /* Spacing between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+    padding-bottom: 5px;
+    /* Removed margin-left: 25px as gap handles spacing */
+}
+
+nav.top-right a:hover {
+    color: #007acc;
 }
 
 nav.top-right a {
@@ -353,4 +379,110 @@ footer {
 .next {
     right: 10px;
 
+}
+
+/* --- Media Query for Mobile Devices (Screen width up to 600px) --- */
+@media (max-width: 1080px) {
+
+    /* 1. Header and Navigation */
+    nav.top-right {
+        /* Mobile: Use space-between to push the button left and links right if needed,
+           but for simplicity, we'll just center the button when links are hidden. */
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    /* Display the hamburger button on Mobile */
+    .hamburger {
+        display: block; /* Show button */
+        background: none;
+        border: none;
+        color: #000000;
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 0;
+        order: 2; /* Ensure the button is on the right/end */
+    }
+
+    /* Hide the navigation links by default on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 55px; /* Position below the nav bar */
+        left: 0;
+        background: #f8f8f8;
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    /* Class to show the navigation links when button is clicked */
+    .nav-links.open {
+        display: flex; /* Show the links */
+    }
+
+    .nav-links a {
+        margin: 5px 0;
+        padding: 8px 0;
+        font-size: 1.1rem;
+        /* Ensure the hover underline works correctly on mobile */
+        width: 100%;
+    }
+
+    /* Reset body padding for mobile nav */
+    body {
+        padding-top: 55px; /* Keep the padding equal to the nav height for fixed nav */
+    }
+
+    nav.top-right a {
+        margin: 5px 0; /* Vertical spacing between links */
+        font-size: 1.1rem; /* Slightly larger text for touch targets */
+        padding: 5px 0;
+    }
+
+    /* Adjust padding for the body to compensate for the un-fixed nav */
+
+    /* Banner - Adjust text size for smaller screens */
+    .banner {
+        height: 200px; /* Reduce banner height */
+    }
+
+    .banner h1 {
+        font-size: 2rem; /* Smaller heading */
+    }
+
+    .banner h2 {
+        font-size: 1rem; /* Smaller subheading */
+    }
+    .intro {
+        flex-direction: column; /* Change from row to column */
+        gap: 20px; /* Reduce gap */
+        padding: 30px 10px; /* Adjust padding */
+    }
+
+    .intro-right {
+        /* Make the card take up most of the width */
+        width: 90%;
+        max-width: 100%; /* Ensure it doesn't exceed screen width */
+        padding: 15px; /* Reduce padding inside the card */
+    }
+
+    .profile-pic {
+        width: 150px; /* Smaller image */
+        height: 150px;
+    }
+    section {
+        padding: 30px 5%; /* Use much smaller side padding */
+    }
+
+    section h3 {
+        font-size: 1.4rem; /* Smaller section headings */
+        margin-top: 20px;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
 }
