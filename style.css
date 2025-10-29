@@ -84,10 +84,6 @@ nav.top-right a:hover::after {
     transform-origin: bottom left;
 }
 
-nav.top-right a.active {
-  color: #007acc;
-}
-
 /* ---------------- Intro Section MODIFIED ---------------- */
 .intro {
     /* Kept alignment and spacing for centering the whole unit */
