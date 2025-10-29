@@ -486,3 +486,16 @@ footer {
         font-size: 0.95rem;
     }
 }
+
+/* ---------------- Hamburger Active Animation ---------------- */
+.hamburger.active div:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
