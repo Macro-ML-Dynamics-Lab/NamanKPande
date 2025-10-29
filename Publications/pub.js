@@ -112,3 +112,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", function () {
+      navLinks.classList.toggle("open");
+      hamburger.classList.toggle("active");
+    });
+
+    // Close menu when a link is clicked (for better mobile UX)
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 1080) {
+          navLinks.classList.remove("open");
+          hamburger.classList.remove("active");
+        }
+      });
+    });
+  }
