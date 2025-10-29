@@ -45,9 +45,35 @@ nav.top-right {
     width: 100%;
     background: #ffffff;
     padding: 15px 40px 15px 25px;
-    text-align: center;
     box-sizing: border-box;
     z-index: 1000;
+    display: flex; /* Use flexbox to align content */
+    justify-content: center; /* Push links to the right */
+    align-items: center;
+}
+
+/* Hide the hamburger button on Desktop */
+.hamburger {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px; /* Spacing between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+    padding-bottom: 5px;
+    /* Removed margin-left: 25px as gap handles spacing */
+}
+
+nav.top-right a:hover {
+    color: #007acc;
 }
 
 nav.top-right a {
@@ -84,6 +110,686 @@ nav.top-right a:hover::after {
     transform-origin: bottom left;
 }
 
+/* ---------------- Intro Section MODIFIED ---------------- */
+.intro {
+    /* Kept alignment and spacing for centering the whole unit */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* This centers the combined content (image + card) */
+    gap: 50px;
+    padding: 50px 20px;
+    background: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.intro-left {
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.intro-right {
+    /* MODIFIED: Changed background and color for a white card look as per the image */
+    background-color: #ffffff; 
+    color: #000000; /* Text color changed to black */
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Lighter shadow for a card effect */
+    max-width: 750;
+    margin: 0; /* Removed auto margin that might interfere with flex centering */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0; /* Subtle border for better definition */
+}
+
+.intro-right:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15); /* Slightly darker shadow on hover */
+    background-color: #eaf5ff; /* Explicitly keep background white on hover */
+}
+
+.intro-right p {
+    margin: 8px 0;
+    line-height: 1.5;
+    color: #000000; /* Ensure text is black */
+}
+
+.intro-right b {
+    font-weight: 600;
+    color: #000000; /* Ensure bold text is black */
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #0a0a0a;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Intro Text Styles - Cleaned up to reflect the desired output image */
+/* Removed specific intro-right heading/title styles since the content uses <p> */
+.intro-right h1, .intro-right .title, .intro-right .tagline {
+    display: none; /* Hide if they were accidentally being used */
+}
+
+.intro-right p {
+    color: #000000;
+    margin: 8px 0; /* Adjusted margin to be consistent */
+    font-size: 1rem;
+}
+
+/* ---------------- Education Section Enhancements ---------------- */
+.education-block {
+    background: #f8fbff; /* soft white-blue background */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    max-width: 750px;
+    margin: 30px auto;
+    border-left: 5px solid #025bb5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.education-block:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    background: #eaf3ff;
+}
+
+.education-block b {
+    color: #025bb5;
+    font-size: 1.1rem;
+}
+
+/* Divider between education items */
+.education-divider {
+    height: 2px;
+    width: 80%;
+    margin: 25px auto;
+    background: linear-gradient(to right, #025bb5, #5ca9ff);
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+/* ---------------- General Text ---------------- */
+h1 {
+    margin: 10px 0 5px;
+    font-size: 2rem;
+}
+
+p {
+    margin: 5px 0 20px;
+    font-size: 1rem;
+    color: #000000;
+}
+
+/* ---------------- Sections ---------------- */
+section {
+    background: #ffffff;
+    color: #000000;
+    padding: 50px 15%;
+    text-align: left;
+}
+
+section h3 {
+    font-size: 1.6rem;
+    margin: 40px 0 20px 0;
+    color: #000;
+    border-bottom: 2px solid #007acc;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+section p {
+    color: #000000;
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    color: #000000;
+}
+
+/* ---------------- Contact ---------------- */
+#contact a {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+#contact a:hover {
+    color: #007acc;
+    text-decoration-color: #007acc;
+}
+
+/* ---------------- Social Links ---------------- */
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    font-size: 30px;
+    margin: 0 12px;
+    color: #025bb5; /* Changed social icon color to a blue for better visibility on white */
+    transition: all 0.3s ease;
+}
+
+/* Hover effects per platform */
+.social-links a[href*="github"]:hover {
+    color: #333;
+    text-shadow: 0 0 10px #333;
+    transform: scale(1.2);
+}
+
+.social-links a[href*="researchgate"]:hover {
+    color: #00ccbb;
+    text-shadow: 0 0 10px #00ccbb;
+    transform: scale(1.2);
+}
+
+.social-links a[href*="scholar"]:hover {
+    color: #4285F4;
+    text-shadow: 0 0 10px #4285F4;
+    transform: scale(1.2);
+}
+
+.social-links a[href*="linkedin"]:hover {
+    color: #0077b5;
+    text-shadow: 0 0 10px #0077b5;
+    transform: scale(1.2);
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f4f4f4;
+    color: #666666;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* ---------------- Carousel Styles (No Change Needed for Layout) ---------------- */
+#publications {
+    padding: 2rem;
+    background: #ffffff;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.carousel-item {
+    min-width: 50%;
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Carousel Navigation Buttons */
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+
+}
+
+/* --- Media Query for Mobile Devices (Screen width up to 600px) --- */
+@media (max-width: 1080px) {
+
+    /* 1. Header and Navigation */
+    nav.top-right {
+        /* Mobile: Use space-between to push the button left and links right if needed,
+           but for simplicity, we'll just center the button when links are hidden. */
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    /* Display the hamburger button on Mobile */
+    .hamburger {
+        display: block; /* Show button */
+        background: none;
+        border: none;
+        color: #000000;
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 0;
+        order: 2; /* Ensure the button is on the right/end */
+    }
+
+    /* Hide the navigation links by default on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 55px; /* Position below the nav bar */
+        left: 0;
+        background: #f8f8f8;
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    /* Class to show the navigation links when button is clicked */
+    .nav-links.open {
+        display: flex; /* Show the links */
+    }
+
+    .nav-links a {
+        margin: 5px 0;
+        padding: 8px 0;
+        font-size: 1.1rem;
+        /* Ensure the hover underline works correctly on mobile */
+        width: 100%;
+    }
+
+    /* Reset body padding for mobile nav */
+    body {
+        padding-top: 55px; /* Keep the padding equal to the nav height for fixed nav */
+    }
+
+    nav.top-right a {
+        margin: 5px 0; /* Vertical spacing between links */
+        font-size: 1.1rem; /* Slightly larger text for touch targets */
+        padding: 5px 0;
+    }
+
+    /* Adjust padding for the body to compensate for the un-fixed nav */
+
+    /* Banner - Adjust text size for smaller screens */
+    .banner {
+        height: 200px; /* Reduce banner height */
+    }
+
+    .banner h1 {
+        font-size: 2rem; /* Smaller heading */
+    }
+
+    .banner h2 {
+        font-size: 1rem; /* Smaller subheading */
+    }
+    .intro {
+        flex-direction: column; /* Change from row to column */
+        gap: 20px; /* Reduce gap */
+        padding: 30px 10px; /* Adjust padding */
+    }
+
+    .intro-right {
+        /* Make the card take up most of the width */
+        width: 90%;
+        max-width: 100%; /* Ensure it doesn't exceed screen width */
+        padding: 15px; /* Reduce padding inside the card */
+    }
+
+    .profile-pic {
+        width: 150px; /* Smaller image */
+        height: 150px;
+    }
+    section {
+        padding: 30px 5%; /* Use much smaller side padding */
+    }
+
+    section h3 {
+        font-size: 1.4rem; /* Smaller section headings */
+        margin-top: 20px;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+}
+/* ---------------- Education Section Enhancements ---------------- */
+.education-block {
+    background: #f8fbff; /* soft white-blue background */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    max-width: 750px;
+    margin: 30px auto;
+    border-left: 5px solid #025bb5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.education-block:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    background: #eaf3ff;
+}
+
+.education-block b {
+    color: #025bb5;
+    font-size: 1.1rem;
+}
+
+/* Divider between education items */
+.education-divider {
+    height: 2px;
+    width: 80%;
+    margin: 25px auto;
+    background: linear-gradient(to right, #025bb5, #5ca9ff);
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+/* ---------------- General Text ---------------- */
+h1 {
+    margin: 10px 0 5px;
+    font-size: 2rem;
+}
+
+p {
+    margin: 5px 0 20px;
+    font-size: 1rem;
+    color: #000000;
+}
+
+/* ---------------- Sections ---------------- */
+section {
+    background: #ffffff;
+    color: #000000;
+    padding: 50px 15%;
+    text-align: left;
+}
+
+section h3 {
+    font-size: 1.6rem;
+    margin: 40px 0 20px 0;
+    color: #000;
+    border-bottom: 2px solid #007acc;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+section p {
+    color: #000000;
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    color: #000000;
+}
+
+/* ---------------- Contact ---------------- */
+#contact a {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+#contact a:hover {
+    color: #007acc;
+    text-decoration-color: #007acc;
+}
+
+/* ---------------- Social Links ---------------- */
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    font-size: 30px;
+    margin: 0 12px;
+    color: #025bb5; /* Changed social icon color to a blue for better visibility on white */
+    transition: all 0.3s ease;
+}
+
+/* Hover effects per platform */
+.social-links a[href*="github"]:hover {
+    color: #333;
+    text-shadow: 0 0 10px #333;
+    transform: scale(1.2);
+}
+
+.social-links a[href*="researchgate"]:hover {
+    color: #00ccbb;
+    text-shadow: 0 0 10px #00ccbb;
+    transform: scale(1.2);
+}
+
+.social-links a[href*="scholar"]:hover {
+    color: #4285F4;
+    text-shadow: 0 0 10px #4285F4;
+    transform: scale(1.2);
+}
+
+.social-links a[href*="linkedin"]:hover {
+    color: #0077b5;
+    text-shadow: 0 0 10px #0077b5;
+    transform: scale(1.2);
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f4f4f4;
+    color: #666666;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* ---------------- Carousel Styles (No Change Needed for Layout) ---------------- */
+#publications {
+    padding: 2rem;
+    background: #ffffff;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.carousel-item {
+    min-width: 50%;
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Carousel Navigation Buttons */
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+
+}
+
+/* --- Media Query for Mobile Devices (Screen width up to 600px) --- */
+@media (max-width: 1080px) {
+
+    /* 1. Header and Navigation */
+    nav.top-right {
+        /* Mobile: Use space-between to push the button left and links right if needed,
+           but for simplicity, we'll just center the button when links are hidden. */
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    /* Display the hamburger button on Mobile */
+    .hamburger {
+        display: block; /* Show button */
+        background: none;
+        border: none;
+        color: #000000;
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 0;
+        order: 2; /* Ensure the button is on the right/end */
+    }
+
+    /* Hide the navigation links by default on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 55px; /* Position below the nav bar */
+        left: 0;
+        background: #f8f8f8;
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    /* Class to show the navigation links when button is clicked */
+    .nav-links.open {
+        display: flex; /* Show the links */
+    }
+
+    .nav-links a {
+        margin: 5px 0;
+        padding: 8px 0;
+        font-size: 1.1rem;
+        /* Ensure the hover underline works correctly on mobile */
+        width: 100%;
+    }
+
+    /* Reset body padding for mobile nav */
+    body {
+        padding-top: 55px; /* Keep the padding equal to the nav height for fixed nav */
+    }
+
+    nav.top-right a {
+        margin: 5px 0; /* Vertical spacing between links */
+        font-size: 1.1rem; /* Slightly larger text for touch targets */
+        padding: 5px 0;
+    }
+
+    /* Adjust padding for the body to compensate for the un-fixed nav */
+
+    /* Banner - Adjust text size for smaller screens */
+    .banner {
+        height: 200px; /* Reduce banner height */
+    }
+
+    .banner h1 {
+        font-size: 2rem; /* Smaller heading */
+    }
+
+    .banner h2 {
+        font-size: 1rem; /* Smaller subheading */
+    }
+    .intro {
+        flex-direction: column; /* Change from row to column */
+        gap: 20px; /* Reduce gap */
+        padding: 30px 10px; /* Adjust padding */
+    }
+
+    .intro-right {
+        /* Make the card take up most of the width */
+        width: 90%;
+        max-width: 100%; /* Ensure it doesn't exceed screen width */
+        padding: 15px; /* Reduce padding inside the card */
+    }
+
+    .profile-pic {
+        width: 150px; /* Smaller image */
+        height: 150px;
+    }
+    section {
+        padding: 30px 5%; /* Use much smaller side padding */
+    }
+
+    section h3 {
+        font-size: 1.4rem; /* Smaller section headings */
+        margin-top: 20px;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+}
 
 /* ---------------- Education Section ---------------- */
 .education-section {
@@ -111,13 +817,11 @@ nav.top-right a:hover::after {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .education-item:hover {
   background: #eaf5ff;
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
-
 
 .education-item h4 {
   font-size: 1.2rem;
@@ -138,7 +842,7 @@ nav.top-right a:hover::after {
   padding-left: 0;
   margin-top: 30px;
   position: relative;
-  border-left: 2px solid #007acc20; /* subtle timeline line */
+  border-left: 2px solid #007acc20;
   padding-left: 40px;
 }
 
@@ -184,10 +888,115 @@ nav.top-right a:hover::after {
 
 /* ---------------- Footer ---------------- */
 footer {
-    margin-top: 40px;
-    padding: 20px;
-    background: #f4f4f4;
-    color: #666666;
-    font-size: 0.9rem;
-    text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #666666;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ---------------- Responsive Design ---------------- */
+  @media (max-width: 1080px) {
+
+    /* 1. Header and Navigation */
+    nav.top-right {
+        /* Mobile: Use space-between to push the button left and links right if needed,
+           but for simplicity, we'll just center the button when links are hidden. */
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    /* Display the hamburger button on Mobile */
+    .hamburger {
+        display: block; /* Show button */
+        background: none;
+        border: none;
+        color: #000000;
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 0;
+        order: 2; /* Ensure the button is on the right/end */
+    }
+
+    /* Hide the navigation links by default on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 55px; /* Position below the nav bar */
+        left: 0;
+        background: #f8f8f8;
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    /* Class to show the navigation links when button is clicked */
+    .nav-links.open {
+        display: flex; /* Show the links */
+        animation: slideDown 0.3s ease forwards;
+
+    }
+
+    .nav-links a {
+        margin: 5px 0;
+        padding: 8px 0;
+        font-size: 1.1rem;
+        /* Ensure the hover underline works correctly on mobile */
+        width: 100%;
+    }
+
+    /* Reset body padding for mobile nav */
+    body {
+        padding-top: 55px; /* Keep the padding equal to the nav height for fixed nav */
+    }
+
+    nav.top-right a {
+        margin: 5px 0; /* Vertical spacing between links */
+        font-size: 1.1rem; /* Slightly larger text for touch targets */
+        padding: 5px 0;
+    }
+
+    /* Adjust padding for the body to compensate for the un-fixed nav */
+
+    /* Banner - Adjust text size for smaller screens */
+    .banner {
+        height: 200px; /* Reduce banner height */
+    }
+
+    .banner h1 {
+        font-size: 2rem; /* Smaller heading */
+    }
+
+    .banner h2 {
+        font-size: 1rem; /* Smaller subheading */
+    }
+
+  .education-section {
+    padding: 30px 5%;
+  }
+
+  .education-item h4 {
+    font-size: 1.1rem;
+  }
+
+  .education-item h5,
+  .education-section ol li {
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------------- Hamburger Active Animation ---------------- */
+.hamburger.active div:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
 }
