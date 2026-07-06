@@ -1,15 +1,16 @@
 /* ---------------- Carousel Styles ---------------- */
+
 #publications {
     padding: 2rem;
     background: #ffffff;
 }
 
 .carousel-container {
+    position: relative;
     width: 60%;
     max-width: 900px;
-}
-.carousel-item img {
-    height: 280px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .carousel-track-container {
@@ -34,27 +35,36 @@
 }
 
 .carousel-item img {
-    width: 100%;
-    height: 320px;
-    object-fit: contain;     /* Shows the full image without cropping */
+    max-width: 100%;
+    max-height: 280px;      /* Adjust to 250-350px if desired */
+    width: auto;
+    height: auto;
     display: block;
+    object-fit: contain;
     border-radius: 8px;
     background: #ffffff;
 }
 
 /* Navigation Buttons */
+
 .nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
+    background-color: rgba(0,0,0,0.5);
     color: white;
-    font-size: 2rem;
-    padding: 0.3rem 0.8rem;
-    cursor: pointer;
+    border: none;
     border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 2rem;
+    cursor: pointer;
     z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.nav:hover {
+    background-color: rgba(0,0,0,0.8);
 }
 
 .prev {
@@ -65,7 +75,8 @@
     right: 10px;
 }
 
-/* Mobile */
+/* ---------------- Mobile ---------------- */
+
 @media (max-width: 768px) {
 
     .carousel-container {
@@ -74,9 +85,13 @@
 
     .carousel-item {
         min-width: 100%;
+        padding: 0 5px;
     }
 
     .carousel-item img {
-        height: 220px;
+        max-width: 100%;
+        max-height: 220px;
+        width: auto;
+        height: auto;
     }
 }
