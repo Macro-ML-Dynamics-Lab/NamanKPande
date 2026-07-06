@@ -5,12 +5,11 @@
 }
 
 .carousel-container {
-    position: relative;
-    width: 70%;
-    max-width: 1000px;
-    margin: 0 auto;
-    overflow: hidden;
-    background-color: transparent;
+    width: 60%;
+    max-width: 900px;
+}
+.carousel-item img {
+    height: 280px;
 }
 
 .carousel-track-container {
